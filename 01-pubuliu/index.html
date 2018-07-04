@@ -1,0 +1,381 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			#main .pin{
+				width:225px;
+				height: auto;
+				padding: 15px 0px 0px 15px;
+				float: left;
+			}
+			#main .pin .box{
+				width: 205px;
+				height: auto;
+				padding: 10px;
+				background: #fff;
+				border: 1px solid #ccc;
+				box-shadow: 0px 0px 6px #ccc;
+				border-radius: 5px;
+				
+			}
+			#main .pin .box img{
+				/*只需要约束宽度即可，高度是自定义的*/
+				width: 205px;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript">
+			window.onload=function(){
+			var oParent=document.getElementById('main');
+			var aPin=getClassObj(oParent,'pin');
+			var iPinW=aPin[0].offsetWidth;
+			var num=Math.floor(document.documentElement.clientWidth/iPinW);
+			//让文本居中
+			oParent.style.cssText='width:' +num*iPinW+'px;margin:0 auto;';
+			var compareAarr=[];
+			for(var i=0;i<aPin.length;i++){
+				if(i<num){
+					compareAarr[i]=aPin[i].offsetHeight;
+				}else{
+					//取最小的高度的图片
+			        var minH=Math.min.apply({},compareAarr);
+			        var minKey= getMinKey(compareAarr,minH);
+			        aPin[i].style.position='absolute';
+			        aPin[i].style.top=minH+'px';
+			        aPin[i].style.left=aPin[minKey].offsetLeft+'px';
+			        //更新最新的高度数据
+			        compareAarr[minKey]+=aPin[i].offsetHeight;
+				}
+				
+			}	
+			for(var i=num;i<aPin.length;i++){
+				aPin[i].style.position='absolute';
+				//drag(aPin[i]);
+			}
+			}
+			//获取数组最小值的键值
+			function getMinKey(arr,minH){
+				for(key in arr){
+					if(arr[key]==minH){
+						return key;
+					}
+				}
+			}
+			//通过class选择元素                父级          类名
+			function getClassObj(parent,className){
+				var obj=parent.getElementsByTagName('*');
+				var result=[];
+				for (var i=0;i<obj.length;i++){
+					if(obj[i].className==className){
+						result.push(obj[i]);
+					}
+				}
+				return result;
+			}
+		</script>
+       
+	</head> 
+	<body>
+		<div id="main">
+			<div class="pin">
+				<div class="box">
+					<img src="images/1.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/2.jpeg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/3.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/4.jpeg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/5.jpeg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/6.jpeg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/7.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/8.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/9.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/10.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/11.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/12.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/13.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/14.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/15.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/16.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/17.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/18.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/19.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/20.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/21.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/22.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/23.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/24.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/25.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/26.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/27.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/28.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/29.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/30.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/31.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/32.jpeg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/33.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/34.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/35.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/36.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/37.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/38.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/39.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/40.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/41.JPG" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/42.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/44.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/45.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/46.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/47.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/48.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/49.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/50.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/51.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/52.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/53.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/53.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/54.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/55.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/56.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/57.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/58.jpg" />
+				</div>
+			</div>
+			<div class="pin">
+				<div class="box">
+					<img src="images/59.jpg" />
+				</div>
+			</div>		
+		</div>
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.pin {
+				position: absolute;
+				margin-left: 100px;
+			}
+			
+			img {
+				/*只需要约束宽度即可，高度是自定义的*/
+				width: 205px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="main">
+			<div class="pin"><img src="images/1.jpg" /></div>
+			<div class="pin"><img src="images/2.jpeg" /></div>
+			<div class="pin"><img src="images/3.jpg" /></div>
+			<div class="pin"><img src="images/4.jpeg" /></div>
+			<div class="pin"><img src="images/5.jpeg" /></div>
+			<div class="pin"><img src="images/6.jpeg" /></div>
+			<div class="pin"><img src="images/7.jpg" /></div>
+			<div class="pin"><img src="images/8.jpg" /></div>
+			<div class="pin"><img src="images/9.jpg" /></div>
+			<div class="pin"><img src="images/10.jpg" /></div>
+			<div class="pin"><img src="images/11.jpg" /></div>
+			<div class="pin"><img src="images/12.jpg" /></div>
+			<div class="pin"><img src="images/13.jpg" /></div>
+			<div class="pin"><img src="images/14.jpg" /></div>
+		</div>
+	</body>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script src="waterfall.js"></script>
+	<script type="text/javascript">
+		
+	$(window).load(function(){
+			$('#main').waterfall({
+				//对象的合并
+				gap: 15
+			})
+		})
+	</script>
+
+</html>
